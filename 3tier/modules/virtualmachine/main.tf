@@ -17,7 +17,7 @@ resource "azurerm_windows_virtual_machine" "appnewvm" {
   admin_password        = random_password.password.result
   location              = azurerm_resource_group.azure-rg.location
   resource_group_name   = azurerm_resource_group.azure-rg.rg.name
-  size                  = "Standard_DS1_v2"
+  size                  = var.vm_size
 
   os_disk {
     name                 = "myOsDisk"
@@ -26,9 +26,9 @@ resource "azurerm_windows_virtual_machine" "appnewvm" {
   }
 
   source_image_reference {
-    publisher = "MicrosoftWindowsServer"
+    publisher = var.publisher
     offer     = "WindowsServer"
-    sku       = "2022-datacenter-azure-edition"
+    sku       = var.vm_sku
     version   = "latest"
   }
   
@@ -51,7 +51,7 @@ resource "azurerm_windows_virtual_machine" "webnewvm" {
   admin_password        = random_password.password.result
   location              = azurerm_resource_group.azure-rg.location
   resource_group_name   = azurerm_resource_group.azure-rg.rg.name
-  size                  = "Standard_DS1_v2"
+  size                  = var.vm_size
 
   os_disk {
     name                 = "myOsDisk"
@@ -60,9 +60,9 @@ resource "azurerm_windows_virtual_machine" "webnewvm" {
   }
 
   source_image_reference {
-    publisher = "MicrosoftWindowsServer"
+    publisher = var.publisher
     offer     = "WindowsServer"
-    sku       = "2022-datacenter-azure-edition"
+    sku       = var.vm_sku
     version   = "latest"
   }
   
