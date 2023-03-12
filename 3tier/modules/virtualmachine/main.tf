@@ -1,7 +1,7 @@
 resource "azurerm_network_interface" "app-interface" {
   name                = "app-nic"
-  location            = var.rglocation
-  resource_group_name = var.rgname
+  location            = var.resource_group
+  resource_group_name = var.location
 
   ip_configuration {
     name                          = "app-ip"
@@ -34,8 +34,8 @@ resource "azurerm_windows_virtual_machine" "appnewvm" {
   
   resource "azurerm_network_interface" "web-interface" {
   name                = "web-nic"
-  location            = var.rglocation
-  resource_group_name = var.rgname
+  location            = var.resource_group
+  resource_group_name = var.location
 
   ip_configuration {
     name                          = "web-ip"
