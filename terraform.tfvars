@@ -1,8 +1,6 @@
 rgname = "threetierrg"
 rglocation = "eastus"
 database_server = "sql-sever-new"
-database_username = "sqladmin"
-database_password = "H34R$##gh"
 database_version = "12.0"
 vm_size = "Standard_DS1_v2"
 vm_sku = "2022-datacenter-azure-edition"
